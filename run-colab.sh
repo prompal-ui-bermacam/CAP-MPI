@@ -14,7 +14,7 @@ do
       echo "------------------------------------------"
       echo "| np=$num_nodes ; size=$size ; $num_exec |"
       echo "------------------------------------------"
-      mpirun --allow-run-as-root -np $num_nodes ./gs_mpi $size $exec_mode
+      mpirun --allow-run-as-root -np $num_nodes ./gs_mpi $size 0
       num_exec=$(( num_exec+1 ))
     done
   done
