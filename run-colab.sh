@@ -11,10 +11,10 @@ do
     num_exec=0
     while [[ $num_exec -lt $max_execs ]]
     do
-      echo "-------------------------------"
-      echo "|  Execution number $num_exec |"
-      echo "-------------------------------"
-      mpirun -np $num_nodes ./gs_mpi $size $exec_mode
+      echo "------------------------------------------"
+      echo "| np=$num_nodes ; size=$size ; $num_exec |"
+      echo "------------------------------------------"
+      mpirun --allow-run-as-root -np $num_nodes ./gs_mpi $size $exec_mode
       num_exec=$(( num_exec+1 ))
     done
   done
